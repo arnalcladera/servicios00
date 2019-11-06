@@ -4,15 +4,24 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { ProductosService } from './servicio/productos.service';
+import { PersonaComponent } from './persona/persona.component';
+import { PersonaService } from './servicio/persona.service';
+import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms'
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PersonaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ ProductosService, PersonaService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
